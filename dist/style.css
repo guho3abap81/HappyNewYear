@@ -1,0 +1,212 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Ariel", cursive, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.fireworks{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url("images/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 5s;
+  z-index: 1;
+}
+.body.active .fireworks{
+  opacity: 1;
+}
+
+.new-year{
+  opacity: 0;
+  font-size: 7rem;
+  color: #ffc600;
+  text-shadow: 0 0 30px gold;
+  text-align: center;
+  animation: glow  3s ease-in-out infinite;
+  transition: all 10s;
+  z-index: 2;
+}
+
+.body.active .new-year{
+  opacity: 1;
+}
+@keyframes glow {
+  0%{
+    text-shadow: 0 0 50px #996600,
+                 0 0 70px gold;
+  }
+  50%{
+    text-shadow: 0 0 20px #996600,
+                 0 0 30px gold;
+  }
+  100%{
+    text-shadow: 0 0 50px #996600,
+                 0 0 70px gold;
+  }
+}
+
+.message{
+  position:;
+  color: #fff;
+}
+
+.champagne {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 700px;
+  background: url("images/source.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 5;
+  cursor: pointer;
+}
+.body.active .champagne{
+  background: url("images/source.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.baloon{
+  width: 200px;
+  height: 250px;
+  border-radius: 70% 70% 75% 75%;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  z-index: 6;
+  bottom: -100%;
+  border: 5px solid #fff;
+}
+
+.baloon:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 0px;
+  transform: translateX(-50%);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid red;
+}
+/*baloon 1*/
+.baloon-1{
+  background: radial-gradient(#fff,silver,darkgrey);
+  left: 5%;
+}
+.baloon-1:before{
+  border-bottom: 20px solid darkgrey;
+}
+.baloon-1.show{
+  background:  darkgrey url("images/audi.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.body.active .baloon-1{
+  animation: rise 10s linear infinite;
+  animation-delay: 5s;
+}
+/*baloon 2*/
+.baloon-2{
+  background: radial-gradient(#fff, yellow, #ffc600);
+  left: 25%;
+}
+
+.baloon-2.show{
+  background:  #ffc600 url("images/cup.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.baloon-2:before{
+  border-bottom: 20px solid #ffc600;
+}
+.body.active .baloon-2{
+  animation: rise 10s linear infinite;
+  animation-delay: 9s;
+}
+/*baloon 3*/
+.baloon-3{
+  background: radial-gradient(#fff,#555,#333);
+  left: 45%;
+  z-index: 6;
+}
+.baloon-3:before{
+  border-bottom: 20px solid #333;
+}
+.baloon-3.show{
+  background:  #333 url("images/house.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.body.active .baloon-3{
+  animation: rise 10s linear infinite;
+  animation-delay: 7s;
+}
+
+/*baloon 4*/
+.baloon-4{
+  background: radial-gradient(blue,darkblue,darkcyan);
+  left: 65%;
+}
+.baloon-4:before{
+  border-bottom: 20px solid darkcyan;
+}
+.baloon-4.show{
+  background:  darkcyan url("images/beti.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.body.active .baloon-4{
+  animation: rise 10s linear infinite;
+  animation-delay: 1s;
+}
+/*baloon 5*/
+.baloon-5{
+  background: radial-gradient(yellow,gold,#996600);
+  left: 85%;
+  animation-delay: 3s;
+}
+.baloon-5:before{
+  border-bottom: 20px solid #996600;
+}
+.baloon-5.show{
+  background:  #996600 url("images/money.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.body.active .baloon-5{
+  animation: rise 10s linear infinite;
+  animation-delay: 3s;
+}
+@keyframes rise {
+  0%{
+    bottom: 0;
+  }
+  100%{
+    bottom: 100%;
+  }
+}
